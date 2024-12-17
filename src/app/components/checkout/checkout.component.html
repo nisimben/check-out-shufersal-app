@@ -1,0 +1,11 @@
+<h1>Checkout Page</h1>
+
+<div class="checkout-container">
+<app-book-address></app-book-address>
+
+  <app-order-summary
+  [cartItems]="cartItems"
+  [totalAmount]="totalAmount"
+  ></app-order-summary>
+</div>
+  

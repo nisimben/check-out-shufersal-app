@@ -1,0 +1,120 @@
+
+.checkout-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;  
+    min-width: 25%;
+    margin: 0 auto;
+
+}
+  
+
+  
+  // Form Styling
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+      color: #161515;
+  
+      input {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-top: 0.25rem;
+        transition: border-color 0.2s;
+  
+        &:focus {
+          border-color: #007bff;
+          outline: none;
+        }
+      }
+    }
+  
+   
+  
+  // Highlight Selected Address
+  .selected-address {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #e8f5e9;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    font-weight: bold
+  }
+
+  
+    input[type='checkbox'] {
+      /* Hide the default checkbox */
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+  
+      &:checked {
+        background-color: #007bff; /* Green when checked */
+        border-color: #007bff;
+        position: relative;
+  
+        /* Add a checkmark */
+        &::after {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 12px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+          position: absolute;
+          top: 2px;
+          left: 6px;
+        }
+      }
+  
+      &:hover {
+        border-color: #888; /* Slightly darker on hover */
+      }
+    }
+    .btn {
+        text-align: center;
+        border-radius: 6px;
+        font-weight: var(--font-light);
+        cursor: pointer;
+        font-size: var(--font-size-larger);
+        transition: 0.1s linear;
+        border: none;
+      
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      &.save {
+        background-color: #2e7d32;
+        color: white;
+      
+        &:hover {
+          background-color: var(--button-primary-hover-color);
+        }
+      }
+        &.delete {
+          background-color: var(--button-delete-bg);
+          color: var(--button-delete-color);
+          margin: 10px;
+      
+          &:hover {
+            background-color: var(--button-delete-hover-bg);
+          }
+        }
+      }
+      
+  
+  }
+

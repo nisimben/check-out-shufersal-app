@@ -1,0 +1,19 @@
+<section>
+    <h2>Book Address List</h2>
+    <ul>
+        <li *ngFor="let address of addressesList();">
+            
+        <b>Your Address:</b> {{ address.addressLine1 }}<br>
+         <b> Country:</b> {{ address.country }}<br>
+          <b>City:</b> {{ address.city }} <br>
+          <b>zipCode:</b>{{ address.zipCode }}<br>
+          <button class="btn delete" (click)="deleteAddress(address)">Remove</button>
+          <button class="btn save" (click)="selectAddress(address)">Save</button>
+        
+        </li>
+
+    </ul>
+    <button (click)="toggleAddNewAddress()">Add New Address</button>
+    
+    </section>
+    <app-new-address *ngIf="isAddNewAddressVisible"></app-new-address>

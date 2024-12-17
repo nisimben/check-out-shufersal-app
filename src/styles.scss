@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --primary-color: #384cff;
+  --button-primary-color: #2c29d5;
+  --button-primary-hover-color: #1f1c8f;
+  --button-delete-bg: #d84907;
+  --button-delete-hover-bg: #d32f2f;
+    --button-delete-color: white;
+
+  --secondary-color: #f4f4f4;
+  --text-color: black;
+  --summary-text-color: #4e5057;
+  --heading-color: #000;
+  --button-cancel-bg: #f2f2f2;
+  --button-cancel-color: #333;
+
+  /* Fonts */
+  --font-family: "Arial", sans-serif;
+
+  /* Font sizes */
+  --font-size-small: 14px;
+  --font-size-smaller: 16px;
+  --font-size-medium: 18px;
+  --font-size-large: 20px;
+  --font-size-larger: 22px;
+  --font-size-xlarge: 25px;
+
+  /* Font weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+}
+
+html,
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color-scheme: light dark;
+}
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display:inline-grid;
+    justify-content:space-between;
+    gap: 1rem; /* Space between sections */
+  }
+  .btn {
+    text-align: center;
+    border-radius: 6px;
+    font-weight: var(--font-light);
+    cursor: pointer;
+    font-size: var(--font-size-larger);
+    transition: 0.1s linear;
+    border: none;
+  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  &.save {
+    background-color: #2e6b7d;
+    color: white;
+  
+    &:hover {
+      background-color: var(--button-primary-hover-color);
+    }
+  }
+    &.delete {
+      background-color: var(--button-delete-bg);
+      color: var(--button-delete-color);
+      margin: 10px;
+  
+      &:hover {
+        background-color: var(--button-delete-hover-bg);
+      }
+    }
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  

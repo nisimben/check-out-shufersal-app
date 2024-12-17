@@ -1,0 +1,24 @@
+<section>
+    <h2>Order Summary</h2>
+    <ul>
+      <li *ngFor="let item of cartItems()">
+        <span>{{ item.name }}</span>
+        <span>x {{ item.quantity }}</span>
+        <span>${{ item.price | number: '1.2-2' }}</span>
+      </li>
+    </ul>
+    <div class="cart-total">
+      <strong>Total:</strong>
+      <span>${{ totalAmount() | number: '1.2-2' }}</span>
+    </div>
+  
+    <!-- Display the selected delivery address -->
+    <div class="delivery-address">
+      <h3>Delivery Address</h3>
+      <b>
+        Your saved Address: {{ selectedAddress || 'No address selected' }}
+   
+      </b>
+    </div>
+  </section>
+  
