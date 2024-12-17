@@ -2,7 +2,7 @@ import { Injectable, signal, WritableSignal } from '@angular/core';
 import { Address } from '../core/interfaces/adress.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,7 +29,7 @@ export class AddressService {
   addNewAddress(newAddress: any): void {
     this.addAddress(newAddress).subscribe({
       next: (response) => {
-        console.log('Address added successfully:', response);
+        console.info('Address added successfully:', response);
       },
       error: (error) => {
         console.error('Error adding address:', error);
@@ -56,30 +56,7 @@ export class AddressService {
   }
   setSelectedAddress(address: Address): void {
     this.selectedAddress.set(address);
-
-    
   }
-  //  private getHeaders(): HttpHeaders {
-  //   return new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //     'Authorization': `Bearer ${environment.apiKey}`
-  //   });
-  // }
-  //  fetchAddresses(): void {
-  //   this.http.get<Address[]>(`${environment.apiUrl}/api/address`, { 
-  //     headers: this.getHeaders() 
-  //   }).pipe(
-  //     tap(addresses => this.addresses.set(addresses)),
-  //     catchError(this.handleError<Address[]>('fetchAddresses', [])),
-      
-  //   ).subscribe();
-  // }
-  // private handleError<T>(operation = 'operation', result?: T) {
-  //   return (error: any): Observable<T> => {
-  //     console.error(`${operation} failed: ${error.message}`);
-  //     return of(result as T);
-  //   };
-  // }
   deleteAddress(address: Address): Observable<any> {
     const headers = new HttpHeaders({ 'Authorization':`Bearer ${environment.apiKey}` }); 
     return this.http.delete(`${environment.apiUrl}/api/address/${address.id}`, { headers });

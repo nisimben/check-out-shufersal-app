@@ -1,8 +1,6 @@
 import { ChangeDetectionStrategy, Component, Signal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
-import { Address } from '../../core/interfaces/adress.interface';
 import { OrderSummaryComponent } from "../order-summary/order-summary.component";
 import { CartItem } from '../../core/interfaces/cartItem.iterface';
 import {MatInputModule} from '@angular/material/input';
